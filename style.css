@@ -1,4 +1,32 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main{
+    display: flex;
+}
+
+.coffee{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.coffee-list{
+    display: flex;
+    gap: 1em;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.coffee-name{
+    padding-right: .25em;
+}
+.coffee-roast{
+    opacity: .5;
+}
 .hidden {
     display: none;
     /*visibility: hidden;*/
 }
+
