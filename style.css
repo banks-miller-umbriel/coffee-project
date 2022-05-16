@@ -5,7 +5,6 @@
 
 header {
     text-align: center;
-
 }
 
 body {
@@ -25,10 +24,10 @@ main{
 
 #coffee-list{
     display: flex;
+    align-content: flex-start;
     gap: 1em;
     width: 50%;
     flex-wrap: wrap;
-    margin: 0;
 }
 
 .coffee-name{
@@ -51,16 +50,12 @@ form {
     text-align: center;
 }
 
-input {
-    width: 100%;
-}
 
-select {
-    width: 100%;
-}
 input, select {
+    width: 100%;
     border-radius: 3px;
-    padding: .2em;
+    padding: .5em;
+    border: 1px solid lightgrey;
     margin: 3px;
 }
 label {

@@ -26,6 +26,11 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+            filteredCoffees = filteredCoffees.filter((coffee) => {
+                let coffeeName = coffee.name.toLowerCase();
+                let filterRoastVal = filterRoast.value.toLowerCase();
+                return coffeeName.includes(filterRoastVal);
+            });
         }
     });
     main.innerHTML = renderCoffees(filteredCoffees);
@@ -52,6 +57,11 @@ let coffees = [
 let main = document.querySelector('#coffee-list');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
+
+let filterRoast = document.querySelector('#filter-roast');
+
+filterRoast.addEventListener('keyup', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees)
 
 main.innerHTML = renderCoffees(coffees);
 
