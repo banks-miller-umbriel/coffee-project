@@ -3,8 +3,18 @@
     font-family: sans-serif;
 }
 
+header {
+    text-align: center;
+
+}
+
+body {
+    padding: .5em 2em;
+}
+
 main{
     display: flex;
+
 }
 
 .coffee{
@@ -12,19 +22,56 @@ main{
     align-items: center;
     flex-wrap: wrap;
 }
-.coffee-list{
+
+#coffee-list{
     display: flex;
     gap: 1em;
     width: 50%;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .coffee-name{
     padding-right: .25em;
 }
+
 .coffee-roast{
     opacity: .5;
 }
+
+#forms {
+    width: 50%;
+}
+
+form {
+    width: 100%;
+}
+
+#add-coffee {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+}
+
+select {
+    width: 100%;
+}
+input, select {
+    border-radius: 3px;
+    padding: .2em;
+    margin: 3px;
+}
+label {
+    font-weight: bold;
+}
+
+#submit, #submit2 {
+    background-color: #3D89CB;
+    color: #FFFFFF;
+}
+
 .hidden {
     display: none;
     /*visibility: hidden;*/

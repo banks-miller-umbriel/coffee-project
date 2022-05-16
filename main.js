@@ -11,12 +11,11 @@ function renderCoffee(coffee) {
 }
 
 function renderCoffees(coffees) {
-    let html = '<div class="coffee-list">';
+    let html = "";
 
     for(let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
-    html += '</div>'
     return html;
 }
 
@@ -50,7 +49,7 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-let main = document.querySelector('main');
+let main = document.querySelector('#coffee-list');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 
