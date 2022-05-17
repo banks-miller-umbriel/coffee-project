@@ -63,7 +63,7 @@ h2{
 
 .coffee-name{
     padding: .5em;
-    background: #222;
+    background: #3D2719;
     border-radius: 5px;
 }
 
@@ -100,8 +100,8 @@ label {
 	font-weight: bold;
 }
 
-#submit, #submit2 {
-    background-color: #3D89CB;
+#submit2 {
+    background-color: #6A442C;
     color: #FFFFFF;
 }
 
