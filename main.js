@@ -47,7 +47,7 @@
         e.preventDefault();
         let newCoffeeName = document.querySelector('#add-coffee-name').value;
         let newRoast = document.querySelector('#add-roast').value;
-        parsedCoffee.push({name: newCoffeeName, roast: newRoast});
+        parsedCoffee.push({id: parsedCoffee.length + 1, name: newCoffeeName, roast: newRoast});
         localStorage.setItem('coffees', JSON.stringify(parsedCoffee));
         coffees = parsedCoffee;
         updateCoffees(e)
@@ -73,10 +73,11 @@
     ];
 
     let parsedCoffee = JSON.parse(localStorage.getItem('coffees'));
-    console.log(typeof parsedCoffee);
     if (parsedCoffee === null) {
         localStorage.setItem('coffees', JSON.stringify(coffees));
+        parsedCoffee = coffees;
     }
+    coffees = parsedCoffee;
 
 
     let main = document.querySelector('#coffee-list');
