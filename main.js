@@ -2,17 +2,15 @@
     "use strict"
     function renderCoffee(coffee) {
         let html = '<div class="coffee">';
-        // html += '<div class="hidden">' + coffee.id + '</div>';
+        //html += '<div class="hidden">' + coffee.id + '</div>';
         html += '<div class="coffee-name"><h2>' + coffee.name + '</h2></div>';
         html += '<div class="coffee-roast">' + coffee.roast + '</div>';
         html += '</div>';
-
         return html;
     }
 
     function renderCoffees(coffees) {
         let html = "";
-
         for (let i = 0; i < coffees.length; i++) {
             html += renderCoffee(coffees[i]);
         }
@@ -53,7 +51,6 @@
         updateCoffees(e)
     }
 
-
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
     let coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
@@ -79,19 +76,13 @@
     }
     coffees = parsedCoffee;
 
-
     let main = document.querySelector('#coffee-list');
     let submitButton = document.querySelector('#submit2');
     let roastSelection = document.querySelector('#roast-selection');
-
     let filterRoast = document.querySelector('#filter-roast');
-
     filterRoast.addEventListener('keyup', updateCoffees);
     roastSelection.addEventListener('change', updateCoffees)
-
     main.innerHTML = renderCoffees(coffees);
-
     submitButton.addEventListener('click', addCoffees);
-
 
 })()

@@ -13,7 +13,6 @@ body {
 
 main{
     display: flex;
-
 }
 
 .coffee{
@@ -50,7 +49,6 @@ form {
     text-align: center;
 }
 
-
 input, select {
     width: 100%;
     border-radius: 3px;
@@ -58,6 +56,7 @@ input, select {
     border: 1px solid lightgrey;
     margin: 3px;
 }
+
 label {
     font-weight: bold;
 }
@@ -71,4 +70,3 @@ label {
     display: none;
     /*visibility: hidden;*/
 }
-
