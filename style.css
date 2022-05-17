@@ -91,6 +91,7 @@ input, select {
     padding: .5em;
     border: 1px solid lightgrey;
     margin: 3px;
+
 }
 
 label {
@@ -107,7 +108,7 @@ label {
     /*visibility: hidden;*/
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
 	main{
 		flex-wrap: nowrap;
 	}
@@ -119,3 +120,4 @@ label {
 		flex-wrap: wrap;
 	}
 }
+
