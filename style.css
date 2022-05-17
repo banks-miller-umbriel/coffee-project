@@ -38,7 +38,11 @@ body {
 main{
     display: flex;
     gap: 3em;
+	justify-content: center;
+	flex-wrap: wrap;
 }
+
+
 h2{
     margin: 0;
 }
@@ -52,11 +56,9 @@ h2{
 }
 
 #coffee-list{
-    display: flex;
-    align-content: flex-start;
+    display: grid;
+	grid-template-columns: repeat(2, 1fr);
     gap: 1em;
-    width: 50%;
-    flex-wrap: wrap;
 }
 
 .coffee-name{
@@ -70,8 +72,8 @@ h2{
     padding-left: .25em;
 }
 
-#forms {
-    width: 50%;
+#forms, #coffee-list {
+    width: 100%;
 }
 
 form {
@@ -103,4 +105,17 @@ label {
 .hidden {
     display: none;
     /*visibility: hidden;*/
+}
+
+@media only screen and (min-width: 600px) {
+	main{
+		flex-wrap: nowrap;
+	}
+	#coffee-list, #forms{
+		width: 50%;
+	}
+	#coffee-list{
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
