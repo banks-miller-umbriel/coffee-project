@@ -23,7 +23,7 @@
 
     function updateCoffees(e) {
         e.preventDefault(); // don't submit the form, we just want to update the data
-        let selectedRoast = roastSelection.value;
+        let selectedRoast = roastSelection.value; //roastSelection is set at the bottom as part of a querySelector
         let filteredCoffees = [];
         if (selectedRoast === 'all') {
             for (const coffee of coffees) {
@@ -42,7 +42,7 @@
             return coffeeName.includes(filterRoastVal);
         });
 
-        main.innerHTML = renderCoffees(filteredCoffees);
+        main.innerHTML = renderCoffees(filteredCoffees); //passes filtered list back up to the renderCoffees function
     }
 
     function addCoffees(e) {
@@ -87,7 +87,7 @@
 
     let main = document.querySelector('#coffee-list');
     let submitButton = document.querySelector('#submit2');
-    let roastSelection = document.querySelector('#roast-selection');
+    let roastSelection = document.querySelector('#roast-selection'); //roast-selection comes from the drop-down
     let filterRoast = document.querySelector('#filter-roast');
 
 
