@@ -23,16 +23,23 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+    if(selectedRoast === 'all'){
+        for (const coffee of coffees) {
             filteredCoffees.push(coffee);
-            filteredCoffees = filteredCoffees.filter((coffee) => {
-                let coffeeName = coffee.name.toLowerCase();
-                let filterRoastVal = filterRoast.value.toLowerCase();
-                return coffeeName.includes(filterRoastVal);
-            });
         }
+    }else {
+        coffees.forEach(function (coffee) {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+        });
+    }
+    filteredCoffees = filteredCoffees.filter((coffee) => {
+        let coffeeName = coffee.name.toLowerCase();
+        let filterRoastVal = filterRoast.value.toLowerCase();
+        return coffeeName.includes(filterRoastVal);
     });
+
     main.innerHTML = renderCoffees(filteredCoffees);
 }
 
