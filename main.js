@@ -1,5 +1,9 @@
 (() => {
     "use strict"
+    // Strips characters from a string that could cause injection
+    const htmlToText = (str) => str.replace( /(<([^>]+)>)/ig, '');
+
+
     function renderCoffee(coffee) {
         let html = '<div class="coffee">';
         //html += '<div class="hidden">' + coffee.id + '</div>';
@@ -43,13 +47,18 @@
 
     function addCoffees(e) {
         e.preventDefault();
-        let newCoffeeName = document.querySelector('#add-coffee-name').value;
-        let newRoast = document.querySelector('#add-roast').value;
+        let newCoffeeName = htmlToText(document.querySelector('#add-coffee-name').value);
+        let newRoast = htmlToText(document.querySelector('#add-roast').value);
+
+        // If user tries to inject a roast that isn't allowed, display alert and don't push
+        if(!['all', 'light', 'medium', 'dark'].includes(newRoast)) return alert('WOAH BUCKO');
+
         parsedCoffee.push({id: parsedCoffee.length + 1, name: newCoffeeName, roast: newRoast});
         localStorage.setItem('coffees', JSON.stringify(parsedCoffee));
         coffees = parsedCoffee;
         updateCoffees(e)
     }
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
     let coffees = [
@@ -80,8 +89,14 @@
     let submitButton = document.querySelector('#submit2');
     let roastSelection = document.querySelector('#roast-selection');
     let filterRoast = document.querySelector('#filter-roast');
+
+
+    // Update coffees whe user types in the filter input
     filterRoast.addEventListener('keyup', updateCoffees);
-    roastSelection.addEventListener('change', updateCoffees)
+
+    // Update coffees when the roast selection is changed
+    roastSelection.addEventListener('change', updateCoffees);
+
     main.innerHTML = renderCoffees(coffees);
     submitButton.addEventListener('click', addCoffees);
 

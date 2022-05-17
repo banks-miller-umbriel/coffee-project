@@ -1,6 +1,20 @@
 *{
     box-sizing: border-box;
     font-family: sans-serif;
+    color: white;
+}
+#background-img{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: -25vw;
+    width: 125vw;
+    height: 100vh;
+    background-image: url("./img/coffee.jpg");
+    background-size: cover;
+    background-position: bottom;
+    filter: blur(10px);
+    z-index: -1;
 }
 
 header {
@@ -13,12 +27,18 @@ body {
 
 main{
     display: flex;
+    gap: 3em;
+}
+h2{
+    margin: 0;
 }
 
 .coffee{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+
 }
 
 #coffee-list{
@@ -30,11 +50,14 @@ main{
 }
 
 .coffee-name{
-    padding-right: .25em;
+    padding: .5em;
+    background: #222;
+    border-radius: 5px;
 }
 
 .coffee-roast{
-    opacity: .5;
+    color: #3dc8e1;
+    padding-left: .25em;
 }
 
 #forms {
@@ -50,6 +73,7 @@ form {
 }
 
 input, select {
+    color: #333;
     width: 100%;
     border-radius: 3px;
     padding: .5em;
