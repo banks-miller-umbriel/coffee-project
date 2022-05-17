@@ -19,11 +19,16 @@
 
 header {
     text-align: center;
+    padding-bottom: 1em;
 }
 
 #main-header {
     font-family: 'Niconne', cursive;
     font-size: 55px;
+}
+
+#main-hr {
+    width: 95%;
 }
 
 body {
