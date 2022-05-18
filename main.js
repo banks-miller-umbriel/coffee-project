@@ -3,7 +3,6 @@
     // Strips characters from a string that could cause injection
     const htmlToText = (str) => str.replace( /(<([^>]+)>)/ig, '');
 
-
     function renderCoffee(coffee) {
         let html = '<div class="coffee">';
         //html += '<div class="hidden">' + coffee.id + '</div>';
@@ -60,7 +59,6 @@
         updateCoffees(e)
     }
 
-
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
     let coffees = [
         {id: 1, name: 'Light City', roast: 'light'},
@@ -91,7 +89,6 @@
     let roastSelection = document.querySelector('#roast-selection'); //roast-selection comes from the drop-down
     let filterRoast = document.querySelector('#filter-roast');
 
-
     // Update coffees whe user types in the filter input
     filterRoast.addEventListener('keyup', updateCoffees);
 
@@ -100,5 +97,4 @@
 
     main.innerHTML = renderCoffees(coffees);
     submitButton.addEventListener('click', addCoffees);
-
 })()
