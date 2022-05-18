@@ -49,9 +49,10 @@
         e.preventDefault();
         let newCoffeeName = htmlToText(document.querySelector('#add-coffee-name').value);
         let newRoast = htmlToText(document.querySelector('#add-roast').value);
+        console.log(newCoffeeName);
 
         // If user tries to inject a roast that isn't allowed, display alert and don't push
-        if(!['all', 'light', 'medium', 'dark'].includes(newRoast)) return alert('WOAH BUCKO');
+        if(!['all', 'light', 'medium', 'dark'].includes(newRoast) || newCoffeeName === '') return alert('WOAH BUCKO');
 
         parsedCoffee.push({id: parsedCoffee.length + 1, name: newCoffeeName, roast: newRoast});
         localStorage.setItem('coffees', JSON.stringify(parsedCoffee));
